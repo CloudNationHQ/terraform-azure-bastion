@@ -5,7 +5,7 @@ This example illustrates a bastion host setup.
 ```hcl
 module "bastion" {
   source  = "cloudnationhq/bastion/azure"
-  version = "~> 0.1"
+  version = "~> 0.2"
 
   naming = local.naming
 
