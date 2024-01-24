@@ -2,7 +2,7 @@ data "azurerm_subscription" "current" {}
 
 # public ip
 resource "azurerm_public_ip" "pip" {
-  name                = var.naming.public_ip
+  name                = try(var.host.public_ip.name, var.naming.public_ip)
   resource_group_name = var.host.resourcegroup
   location            = var.host.location
   allocation_method   = try(var.host.public_ip.allocation_method, "Static")
