@@ -19,7 +19,7 @@ module "rg" {
 
 module "network" {
   source  = "cloudnationhq/vnet/azure"
-  version = "~> 0.1"
+  version = "~> 1.0"
 
   naming = local.naming
 
@@ -31,9 +31,11 @@ module "network" {
 
     subnets = {
       bastion = {
-        name  = "AzureBastionSubnet"
-        cidr  = ["10.19.1.0/27"]
-        rules = local.rules
+        name = "AzureBastionSubnet"
+        cidr = ["10.19.1.0/27"]
+        nsg = {
+          rules = local.rules
+        }
       }
     }
   }

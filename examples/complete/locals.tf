@@ -8,8 +8,9 @@ locals {
 }
 
 locals {
-  rules = [
-    {
+  #https://learn.microsoft.com/en-us/azure/bastion/bastion-nsg
+  rules = {
+    allowhttpsinbound = {
       name                         = "AllowHttpsInbound"
       description                  = "Allow connection from any host on https"
       protocol                     = "Tcp"
@@ -18,14 +19,14 @@ locals {
       source_address_prefix        = "Internet"
       destination_address_prefix   = "*"
       access                       = "Allow"
-      priority                     = 100
+      priority                     = 120
       direction                    = "Inbound"
       source_port_ranges           = []
       destination_port_ranges      = []
       source_address_prefixes      = []
       destination_address_prefixes = []
     },
-    {
+    allowgatewaymanagerinbound = {
       name                         = "AllowGatewayManagerInbound"
       description                  = "This enables the control plane, that is, Gateway Manager to be able to talk to Azure Bastion."
       protocol                     = "Tcp"
@@ -34,14 +35,14 @@ locals {
       source_address_prefix        = "GatewayManager"
       destination_address_prefix   = "*"
       access                       = "Allow"
-      priority                     = 110
+      priority                     = 130
       direction                    = "Inbound"
       source_port_ranges           = []
       destination_port_ranges      = []
       source_address_prefixes      = []
       destination_address_prefixes = []
     },
-    {
+    allowsshrdpoutbound = {
       name                       = "AllowSshRdpOutbound"
       description                = "Egress Traffic to target VMs: Azure Bastion will reach the target VMs over private IP and SSH/RDP port"
       protocol                   = "*"
@@ -59,7 +60,7 @@ locals {
       source_address_prefixes      = []
       destination_address_prefixes = []
     },
-    {
+    allowazurecloudoutbound = {
       name                         = "AllowAzureCloudOutbound"
       description                  = "Egress Traffic to other public endpoints in Azure"
       protocol                     = "Tcp"
@@ -75,7 +76,7 @@ locals {
       source_address_prefixes      = []
       destination_address_prefixes = []
     },
-    {
+    allowbastioncommunication = {
       name                       = "AllowBastionCommunication"
       description                = "Egress Traffic to other public endpoints in Azure"
       protocol                   = "*"
@@ -93,7 +94,7 @@ locals {
       source_address_prefixes      = []
       destination_address_prefixes = []
     },
-    {
+    allowgetsessioninformation = {
       name                         = "AllowGetSessionInformation"
       description                  = "Egress Traffic to other public endpoints in Azure"
       protocol                     = "*"
@@ -109,5 +110,5 @@ locals {
       source_address_prefixes      = []
       destination_address_prefixes = []
     }
-  ]
+  }
 }
