@@ -12,7 +12,7 @@ resource "azurerm_public_ip" "pip" {
 
 # bastion host
 resource "azurerm_bastion_host" "bastion" {
-  name                = var.host.name
+  name                = try(var.host.name, var.naming.bastion_host)
   resource_group_name = var.host.resourcegroup
   location            = var.host.location
 
