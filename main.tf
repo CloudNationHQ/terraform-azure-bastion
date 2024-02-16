@@ -18,11 +18,11 @@ resource "azurerm_bastion_host" "bastion" {
 
   sku                    = try(var.host.sku, "Standard")
   scale_units            = try(var.host.scale_units, 2)
-  copy_paste_enabled     = try(var.host.copy_paste, false)
-  file_copy_enabled      = try(var.host.file_copy, false)
-  tunneling_enabled      = try(var.host.tunneling, false)
-  ip_connect_enabled     = try(var.host.ip_connect, false)
-  shareable_link_enabled = try(var.host.shareable_link, false)
+  copy_paste_enabled     = try(var.host.copy_paste_enabled, false)
+  file_copy_enabled      = try(var.host.file_copy_enabled, false)
+  tunneling_enabled      = try(var.host.tunneling_enabled, false)
+  ip_connect_enabled     = try(var.host.ip_connect_enabled, false)
+  shareable_link_enabled = try(var.host.shareable_link_enabled, false)
 
   ip_configuration {
     name                 = "configuration"

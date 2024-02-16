@@ -48,10 +48,10 @@ module "bastion" {
   naming = local.naming
 
   host = {
-    name          = module.naming.bastion_host.name
-    location      = module.rg.groups.demo.location
-    resourcegroup = module.rg.groups.demo.name
-    subnet        = module.network.subnets.bastion.id
-    copy_paste    = true
+    name               = module.naming.bastion_host.name
+    location           = module.rg.groups.demo.location
+    resourcegroup      = module.rg.groups.demo.name
+    subnet             = module.network.subnets.bastion.id
+    copy_paste_enabled = true
   }
 }
