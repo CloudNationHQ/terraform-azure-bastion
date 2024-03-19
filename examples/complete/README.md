@@ -1,25 +1,40 @@
-This example illustrates a bastion host setup.
+This example highlights the complete usage.
 
 ## Usage
 
 ```hcl
 module "bastion" {
   source  = "cloudnationhq/bastion/azure"
-  version = "~> 0.5"
+  version = "~> 0.1"
 
   naming = local.naming
+  host   = local.host
+}
+```
 
+The module uses the below locals for configuration:
+
+```hcl
+locals {
   host = {
     name          = module.naming.bastion_host.name
     location      = module.rg.groups.demo.location
     resourcegroup = module.rg.groups.demo.name
-    subnet        = module.network.subnets.bastion.id
-    copy_paste    = true
+
+    copy_paste_enabled     = true
+    file_copy_enabled      = true
+    tunneling_enabled      = true
+    ip_connect_enabled     = true
+    shareable_link_enabled = true
+
+    ip_configuration = {
+      subnet_id = module.network.subnets.bastion.id
+    }
   }
 }
 ```
 
-It conforms to the rules outlined below.
+The following rules are required at network level:
 
 ```hcl
 locals {
