@@ -50,6 +50,9 @@ A last key goal is to separate logic from configuration in the module, thereby e
 | :-- | :-- | :-- | :-- |
 | `host` | describes bastion related configuration | object | yes |
 | `naming` | contains naming convention | string | yes |
+| `location` | default azure region tho be used | string | no |
+| `resourcegroup` | default resource group to be used | string | no |
+| `tags` | tags to be added to the resources | map(string) | no |
 
 ## Outputs
 
