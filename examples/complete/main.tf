@@ -19,7 +19,7 @@ module "rg" {
 
 module "network" {
   source  = "cloudnationhq/vnet/azure"
-  version = "~> 1.0"
+  version = "~> 2.0"
 
   naming = local.naming
 
@@ -46,12 +46,5 @@ module "bastion" {
   version = "~> 0.1"
 
   naming = local.naming
-
-  host = {
-    name               = module.naming.bastion_host.name
-    location           = module.rg.groups.demo.location
-    resourcegroup      = module.rg.groups.demo.name
-    subnet             = module.network.subnets.bastion.id
-    copy_paste_enabled = true
-  }
+  host   = local.host
 }
