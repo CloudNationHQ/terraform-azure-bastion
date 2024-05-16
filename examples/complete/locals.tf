@@ -18,6 +18,7 @@ locals {
     tunneling_enabled      = true
     ip_connect_enabled     = true
     shareable_link_enabled = true
+    kerberos_enabled       = true
 
     ip_configuration = {
       subnet_id = module.network.subnets.bastion.id
