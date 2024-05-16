@@ -5,7 +5,7 @@ This example highlights the complete usage.
 ```hcl
 module "bastion" {
   source  = "cloudnationhq/bastion/azure"
-  version = "~> 0.6"
+  version = "~> 0.7"
 
   naming = local.naming
   host   = local.host
