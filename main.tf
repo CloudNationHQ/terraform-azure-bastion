@@ -34,6 +34,7 @@ resource "azurerm_bastion_host" "bastion" {
   tunneling_enabled      = try(var.host.tunneling_enabled, false)
   ip_connect_enabled     = try(var.host.ip_connect_enabled, false)
   shareable_link_enabled = try(var.host.shareable_link_enabled, false)
+  kerberos_enabled       = try(var.host.kerberos_enabled, false)
   tags                   = try(var.host.tags, var.tags, null)
 
   ip_configuration {
