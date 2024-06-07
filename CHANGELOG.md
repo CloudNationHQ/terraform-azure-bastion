@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.7.0...v0.8.0) (2024-06-07)
+
+
+### Features
+
+* add pull request template ([#32](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/32)) ([0ac7067](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/0ac70673c2533e04a75d1e2b0f509c7427f4db69))
+* **deps:** bump github.com/gruntwork-io/terratest in /tests ([#31](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/31)) ([dcee679](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/dcee679040d9e071986f85c643f86822b2b7dcbe))
+
 ## [0.7.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.6.0...v0.7.0) (2024-05-16)
 
 
