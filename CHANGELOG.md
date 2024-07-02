@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.9.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.8.0...v0.9.0) (2024-07-02)
+
+
+### Features
+
+* add issue template ([#37](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/37)) ([ba6c7b0](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/ba6c7b0875fd587793cd4ececd4df8140954b8f4))
+* **deps:** bump github.com/Azure/azure-sdk-for-go/sdk/azidentity ([#34](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/34)) ([ff59415](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/ff59415b3452944bff29186636711717ddf2660f))
+* **deps:** bump github.com/Azure/azure-sdk-for-go/sdk/azidentity ([#35](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/35)) ([c9d3a40](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/c9d3a40da7892d237342babd11fbb79cf470ae17))
+* **deps:** bump github.com/gruntwork-io/terratest in /tests ([#38](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/38)) ([2ac3a9f](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/2ac3a9f204c386820dc1da8b6187f6c3dcb69bb8))
+* **deps:** bump github.com/hashicorp/go-getter in /tests ([#36](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/36)) ([e4c35ce](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/e4c35cec9ea623053fd9e4c9acad3e7dded37766))
+
 ## [0.8.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.7.0...v0.8.0) (2024-06-07)
 
 
