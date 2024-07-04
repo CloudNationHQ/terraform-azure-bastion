@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.9.0...v0.10.0) (2024-07-04)
+
+
+### Features
+
+* update contribution docs ([#40](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/40)) ([c87393c](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/c87393c450ffba69b8a2a6b020f4aeb7dc6ddd7a))
+
 ## [0.9.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.8.0...v0.9.0) (2024-07-02)
 
 
