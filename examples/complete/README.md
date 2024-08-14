@@ -1,144 +1,26 @@
+# Complete
+
 This example highlights the complete usage.
 
-## Usage
+## Types
 
 ```hcl
-module "bastion" {
-  source  = "cloudnationhq/bastion/azure"
-  version = "~> 0.10"
-
-  naming = local.naming
-  host   = local.host
-}
+host = object({
+  name                    = string
+  location                = string
+  resource_group          = string
+  copy_paste_enabled      = optional(bool, false)
+  file_copy_enabled       = optional(bool, false)
+  tunneling_enabled       = optional(bool, false)
+  ip_connect_enabled      = optional(bool, false)
+  shareable_link_enabled  = optional(bool, false)
+  kerberos_enabled        = optional(bool, false)
+  ip_configuration = object({
+    subnet_id = string
+  })
+})
 ```
 
-The module uses the below locals for configuration:
+## Notes
 
-```hcl
-locals {
-  host = {
-    name          = module.naming.bastion_host.name
-    location      = module.rg.groups.demo.location
-    resourcegroup = module.rg.groups.demo.name
-
-    copy_paste_enabled     = true
-    file_copy_enabled      = true
-    tunneling_enabled      = true
-    ip_connect_enabled     = true
-    shareable_link_enabled = true
-
-    ip_configuration = {
-      subnet_id = module.network.subnets.bastion.id
-    }
-  }
-}
-```
-
-The following rules are required at network level:
-
-```hcl
-locals {
-  rules = [
-    {
-      name                         = "AllowHttpsInbound"
-      description                  = "Allow connection from any host on https"
-      protocol                     = "Tcp"
-      source_port_range            = "*"
-      destination_port_range       = 443
-      source_address_prefix        = "Internet"
-      destination_address_prefix   = "*"
-      access                       = "Allow"
-      priority                     = 100
-      direction                    = "Inbound"
-      source_port_ranges           = []
-      destination_port_ranges      = []
-      source_address_prefixes      = []
-      destination_address_prefixes = []
-    },
-    {
-      name                         = "AllowGatewayManagerInbound"
-      description                  = "This enables the control plane, that is, Gateway Manager to be able to talk to Azure Bastion."
-      protocol                     = "Tcp"
-      source_port_range            = "*"
-      destination_port_range       = 443
-      source_address_prefix        = "GatewayManager"
-      destination_address_prefix   = "*"
-      access                       = "Allow"
-      priority                     = 110
-      direction                    = "Inbound"
-      source_port_ranges           = []
-      destination_port_ranges      = []
-      source_address_prefixes      = []
-      destination_address_prefixes = []
-    },
-    {
-      name                       = "AllowSshRdpOutbound"
-      description                = "Egress Traffic to target VMs: Azure Bastion will reach the target VMs over private IP and SSH/RDP port"
-      protocol                   = "*"
-      source_port_range          = "*"
-      source_address_prefix      = "*"
-      destination_address_prefix = "VirtualNetwork"
-      access                     = "Allow"
-      priority                   = 100
-      direction                  = "Outbound"
-      source_port_ranges         = []
-      destination_port_ranges = [
-        "22",
-        "3389"
-      ]
-      source_address_prefixes      = []
-      destination_address_prefixes = []
-    },
-    {
-      name                         = "AllowAzureCloudOutbound"
-      description                  = "Egress Traffic to other public endpoints in Azure"
-      protocol                     = "Tcp"
-      source_port_range            = "*"
-      destination_port_range       = 443
-      source_address_prefix        = "*"
-      destination_address_prefix   = "AzureCloud"
-      access                       = "Allow"
-      priority                     = 110
-      direction                    = "Outbound"
-      source_port_ranges           = []
-      destination_port_ranges      = []
-      source_address_prefixes      = []
-      destination_address_prefixes = []
-    },
-    {
-      name                       = "AllowBastionCommunication"
-      description                = "Egress Traffic to other public endpoints in Azure"
-      protocol                   = "*"
-      source_port_range          = "*"
-      source_address_prefix      = "VirtualNetwork"
-      destination_address_prefix = "VirtualNetwork"
-      access                     = "Allow"
-      priority                   = 120
-      direction                  = "Outbound"
-      source_port_ranges         = []
-      destination_port_ranges = [
-        "8080",
-        "5701"
-      ]
-      source_address_prefixes      = []
-      destination_address_prefixes = []
-    },
-    {
-      name                         = "AllowGetSessionInformation"
-      description                  = "Egress Traffic to other public endpoints in Azure"
-      protocol                     = "*"
-      source_port_range            = "*"
-      source_address_prefix        = "*"
-      destination_port_range       = 80
-      destination_address_prefix   = "Internet"
-      access                       = "Allow"
-      priority                     = 130
-      direction                    = "Outbound"
-      source_port_ranges           = []
-      destination_port_ranges      = []
-      source_address_prefixes      = []
-      destination_address_prefixes = []
-    }
-  ]
-}
-```
+Included in the usage is a list of network rules associated with bastion hosts.

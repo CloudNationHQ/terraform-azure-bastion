@@ -46,7 +46,7 @@ func TestBastion(t *testing.T) {
 		terraform.InitAndApply(t, tfOpts)
 
 		bastionMap := terraform.OutputMap(t, tfOpts, "bastion")
-		subscriptionId := terraform.Output(t, tfOpts, "subscriptionId")
+		subscriptionId := terraform.Output(t, tfOpts, "subscription_id")
 
 		bastionDetails := &bastionDetails{
 			ResourceGroupName: bastionMap["resource_group_name"],
