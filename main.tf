@@ -3,7 +3,7 @@ data "azurerm_subscription" "current" {}
 # public ip
 resource "azurerm_public_ip" "pip" {
   name                    = try(var.host.public_ip.name, var.naming.public_ip)
-  resource_group_name     = coalesce(lookup(var.host, "resourcegroup", null), var.resourcegroup)
+  resource_group_name     = coalesce(lookup(var.host, "resource_group", null), var.resource_group)
   location                = coalesce(lookup(var.host, "location", null), var.location)
   allocation_method       = try(var.host.public_ip.allocation_method, "Static")
   sku                     = try(var.host.public_ip.sku, "Standard")
@@ -24,7 +24,7 @@ resource "azurerm_public_ip" "pip" {
 # bastion host
 resource "azurerm_bastion_host" "bastion" {
   name                = try(var.host.name, var.naming.bastion_host)
-  resource_group_name = coalesce(lookup(var.host, "resourcegroup", null), var.resourcegroup)
+  resource_group_name = coalesce(lookup(var.host, "resource_group", null), var.resource_group)
   location            = coalesce(lookup(var.host, "location", null), var.location)
 
   sku                    = try(var.host.sku, "Standard")

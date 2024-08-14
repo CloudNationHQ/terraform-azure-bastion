@@ -43,14 +43,14 @@ module "network" {
 
 module "bastion" {
   source  = "cloudnationhq/bastion/azure"
-  version = "~> 0.1"
+  version = "~> 1.0"
 
   naming = local.naming
 
   host = {
-    name          = module.naming.bastion_host.name
-    location      = module.rg.groups.demo.location
-    resourcegroup = module.rg.groups.demo.name
+    name           = module.naming.bastion_host.name
+    location       = module.rg.groups.demo.location
+    resource_group = module.rg.groups.demo.name
 
     copy_paste_enabled     = true
     file_copy_enabled      = true

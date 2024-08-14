@@ -3,6 +3,6 @@ output "bastion" {
   sensitive = true
 }
 
-output "subscriptionId" {
-  value = module.bastion.subscriptionId
+output "subscription_id" {
+  value = module.bastion.subscription_id
 }
