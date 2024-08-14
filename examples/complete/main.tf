@@ -46,5 +46,21 @@ module "bastion" {
   version = "~> 0.1"
 
   naming = local.naming
-  host   = local.host
+
+  host = {
+    name          = module.naming.bastion_host.name
+    location      = module.rg.groups.demo.location
+    resourcegroup = module.rg.groups.demo.name
+
+    copy_paste_enabled     = true
+    file_copy_enabled      = true
+    tunneling_enabled      = true
+    ip_connect_enabled     = true
+    shareable_link_enabled = true
+    kerberos_enabled       = true
+
+    ip_configuration = {
+      subnet_id = module.network.subnets.bastion.id
+    }
+  }
 }

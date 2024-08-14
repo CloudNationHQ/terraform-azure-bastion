@@ -1,31 +1,3 @@
-locals {
-  naming = {
-    # lookup outputs to have consistent naming
-    for type in local.naming_types : type => lookup(module.naming, type).name
-  }
-
-  naming_types = ["subnet", "network_security_group", "public_ip"]
-}
-
-locals {
-  host = {
-    name          = module.naming.bastion_host.name
-    location      = module.rg.groups.demo.location
-    resourcegroup = module.rg.groups.demo.name
-
-    copy_paste_enabled     = true
-    file_copy_enabled      = true
-    tunneling_enabled      = true
-    ip_connect_enabled     = true
-    shareable_link_enabled = true
-    kerberos_enabled       = true
-
-    ip_configuration = {
-      subnet_id = module.network.subnets.bastion.id
-    }
-  }
-}
-
 # https://learn.microsoft.com/en-us/azure/bastion/bastion-nsg
 locals {
   rules = {
