@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.11.0...v1.0.0) (2024-08-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* * data structure has changed due to renaming of properties and output variables.
+
+### Features
+
+* aligned several properties ([#46](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/46)) ([4388103](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/4388103380715033f5e3f0c513bf28e92af762e4))
+
 ## [0.11.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.10.0...v0.11.0) (2024-08-14)
 
 
