@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.10.0...v0.11.0) (2024-08-14)
+
+
+### Features
+
+* added code of conduct and security documentation ([#43](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/43)) ([8a03000](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/8a03000bb9d8acfca309125a6cf54f439be7f1d9))
+
 ## [0.10.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.9.0...v0.10.0) (2024-08-13)
 
 
