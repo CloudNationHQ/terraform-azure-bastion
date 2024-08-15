@@ -5,7 +5,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-* * data structure has changed due to renaming of properties and output variables.
+* data structure has changed due to renaming of properties and output variables.
 
 ### Features
 
@@ -13,6 +13,15 @@
 
 ## [0.11.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.10.0...v0.11.0) (2024-08-14)
 
+### Upgrade from v0.11.0 to v1.0.0:
+
+- Update module reference to: `version = "~> 1.0"`
+- Rename properties in host object:
+  - resourcegroup -> resource_group
+- Rename variable:
+  - resourcegroup -> resource_group
+- Rename output variable:
+  - subscriptionId -> subscription_id'
 
 ### Features
 
