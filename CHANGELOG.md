@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v1.0.0...v1.1.0) (2024-08-28)
+
+
+### Features
+
+* add question template ([#49](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/49)) ([00aace4](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/00aace441813c3d8ea465a3dc929fa4c8cd065b9))
+
 ## [1.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v0.11.0...v1.0.0) (2024-08-14)
 
 
