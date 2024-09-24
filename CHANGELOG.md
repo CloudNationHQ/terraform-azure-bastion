@@ -9,7 +9,7 @@
 
 ### Features
 
-* upgrade azurerm provder to v4 ([#52](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/52)) ([737ae52](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/737ae529fbfe0e8855e183e1727a9f063621141e))
+* upgrade azurerm provider to v4 ([#52](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/52)) ([737ae52](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/737ae529fbfe0e8855e183e1727a9f063621141e))
 
 ### Upgrade from v1.1.0 to v2.0.0:
 
