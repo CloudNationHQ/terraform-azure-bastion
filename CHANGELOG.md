@@ -5,11 +5,15 @@
 
 ### ⚠ BREAKING CHANGES
 
-* * Version 4 of the azurerm provider includes breaking changes.
+* Version 4 of the azurerm provider includes breaking changes.
 
 ### Features
 
 * upgrade azurerm provder to v4 ([#52](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/52)) ([737ae52](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/737ae529fbfe0e8855e183e1727a9f063621141e))
+
+### Upgrade from v1.1.0 to v2.0.0:
+
+- Update module reference to: `version = "~> 2.0"`
 
 ## [1.1.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v1.0.0...v1.1.0) (2024-08-28)
 
