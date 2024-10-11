@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.0.0...v2.1.0) (2024-10-11)
+
+
+### Features
+
+* auto generated docs and refine makefile ([#55](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/55)) ([e9ea241](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/e9ea241fbf49c484ef3a98155bda3d36065e9223))
+* **deps:** bump github.com/gruntwork-io/terratest in /tests ([#54](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/54)) ([c9f2784](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/c9f2784abd60c2f6983f6318f4fc56052b840ef9))
+
 ## [2.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v1.1.0...v2.0.0) (2024-09-24)
 
 
