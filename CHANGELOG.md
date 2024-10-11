@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.1.0...v2.2.0) (2024-10-11)
+
+
+### Features
+
+* enable session recording support ([#57](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/57)) ([2a142cc](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/2a142cc79ef596f87d4eb9bcf9f93101cc01bbce))
+
 ## [2.1.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.0.0...v2.1.0) (2024-10-11)
 
 
