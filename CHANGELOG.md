@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.2.0...v2.3.0) (2024-11-12)
+
+
+### Features
+
+* enhance testing with sequential, parallel modes and flags for exceptions and skip-destroy ([#60](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/60)) ([fd372ea](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/fd372ea0bbd50cffb73f4aa34199947695fe9047))
+
 ## [2.2.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.1.0...v2.2.0) (2024-10-11)
 
 
