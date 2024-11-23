@@ -36,6 +36,7 @@ resource "azurerm_bastion_host" "bastion" {
   shareable_link_enabled    = try(var.host.shareable_link_enabled, false)
   kerberos_enabled          = try(var.host.kerberos_enabled, false)
   session_recording_enabled = try(var.host.session_recording_enabled, false)
+  zones                     = try(var.host.zones, [])
   tags                      = try(var.host.tags, var.tags, null)
 
   ip_configuration {
