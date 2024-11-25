@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.3.0...v2.4.0) (2024-11-25)
+
+
+### Features
+
+* add zones support and fixed required ruleset ([#62](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/62)) ([412f057](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/412f0579e25fb22f926a4a516a56c7ececb0e267))
+
 ## [2.3.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.2.0...v2.3.0) (2024-11-12)
 
 
