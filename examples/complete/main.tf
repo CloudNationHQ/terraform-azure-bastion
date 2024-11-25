@@ -1,6 +1,6 @@
 module "naming" {
   source  = "cloudnationhq/naming/azure"
-  version = "~> 0.1"
+  version = "~> 0.22"
 
   suffix = ["demo", "dev"]
 }
@@ -19,7 +19,7 @@ module "rg" {
 
 module "network" {
   source  = "cloudnationhq/vnet/azure"
-  version = "~> 4.0"
+  version = "~> 8.0"
 
   naming = local.naming
 
@@ -27,13 +27,13 @@ module "network" {
     name           = module.naming.virtual_network.name
     location       = module.rg.groups.demo.location
     resource_group = module.rg.groups.demo.name
-    cidr           = ["10.19.0.0/16"]
+    address_space  = ["10.19.0.0/16"]
 
     subnets = {
       bastion = {
-        name = "AzureBastionSubnet"
-        cidr = ["10.19.1.0/27"]
-        nsg = {
+        name             = "AzureBastionSubnet"
+        address_prefixes = ["10.19.1.0/27"]
+        network_security_group = {
           rules = local.rules
         }
       }
@@ -48,7 +48,7 @@ module "bastion" {
   naming = local.naming
 
   host = {
-    name           = module.naming.bastion_host.name
+    name           = module.naming.bastion_host.name_unique
     location       = module.rg.groups.demo.location
     resource_group = module.rg.groups.demo.name
 
