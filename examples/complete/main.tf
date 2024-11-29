@@ -41,11 +41,26 @@ module "network" {
   }
 }
 
-module "bastion" {
-  source  = "cloudnationhq/bastion/azure"
+module "public_ip" {
+  source  = "cloudnationhq/pip/azure"
   version = "~> 2.0"
 
   naming = local.naming
+
+  configs = {
+    bastion = {
+      name           = module.naming.public_ip.name
+      location       = module.rg.groups.demo.location
+      resource_group = module.rg.groups.demo.name
+
+      zones = ["1", "2", "3"]
+    }
+  }
+}
+
+module "bastion" {
+  source  = "cloudnationhq/bastion/azure"
+  version = "~> 3.0"
 
   host = {
     name           = module.naming.bastion_host.name_unique
@@ -60,7 +75,8 @@ module "bastion" {
     kerberos_enabled       = true
 
     ip_configuration = {
-      subnet_id = module.network.subnets.bastion.id
+      subnet_id            = module.network.subnets.bastion.id
+      public_ip_address_id = module.public_ip.configs.bastion.id
     }
   }
 }

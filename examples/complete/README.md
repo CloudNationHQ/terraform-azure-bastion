@@ -16,7 +16,8 @@ host = object({
   shareable_link_enabled  = optional(bool, false)
   kerberos_enabled        = optional(bool, false)
   ip_configuration = object({
-    subnet_id = string
+    subnet_id            = string
+    public_ip_address_id = string
   })
 })
 ```

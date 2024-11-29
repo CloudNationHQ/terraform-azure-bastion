@@ -45,8 +45,6 @@ End-to-end testing is not conducted on these modules, as they are individual com
 | Name | Type |
 |------|------|
 | [azurerm_bastion_host.bastion](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/bastion_host) | resource |
-| [azurerm_public_ip.pip](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip) | resource |
-| [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription) | data source |
 
 ## Inputs
 
@@ -63,7 +61,6 @@ End-to-end testing is not conducted on these modules, as they are individual com
 | Name | Description |
 |------|-------------|
 | <a name="output_host"></a> [host](#output\_host) | contains all bastion related configuration |
-| <a name="output_subscription_id"></a> [subscription\_id](#output\_subscription\_id) | contains the current subscription id |
 <!-- END_TF_DOCS -->
 
 ## Testing
