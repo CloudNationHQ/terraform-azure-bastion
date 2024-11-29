@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.4.0...v3.0.0) (2024-11-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* public ip needs to be used as a seperated module.
+
+### Features
+
+* removed public ip from the module itself ([#64](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/64)) ([fbb0dcf](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/fbb0dcf57ba243eb20fe9c6f02c3a8740b9ccb27))
+
 ## [2.4.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.3.0...v2.4.0) (2024-11-25)
 
 
