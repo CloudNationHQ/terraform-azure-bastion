@@ -11,6 +11,11 @@
 
 * removed public ip from the module itself ([#64](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/64)) ([fbb0dcf](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/fbb0dcf57ba243eb20fe9c6f02c3a8740b9ccb27))
 
+### Upgrade from v2.4.0 to v3.0.0:
+
+- Update module reference to: `version = "~> 3.0"`
+  - see example [usage](https://github.com/CloudNationHQ/terraform-azure-bastion/blob/main/examples/complete/main.tf)
+
 ## [2.4.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.3.0...v2.4.0) (2024-11-25)
 
 
