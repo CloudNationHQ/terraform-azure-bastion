@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v3.0.0...v3.1.0) (2024-12-09)
+
+
+### Features
+
+* add descriptions to bastion nsg rules ([#66](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/66)) ([04e9913](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/04e9913d80e7e5a6b9feaf027b54fcad1941b948))
+
 ## [3.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v2.4.0...v3.0.0) (2024-11-29)
 
 
