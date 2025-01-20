@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.2.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v3.1.0...v3.2.0) (2025-01-20)
+
+
+### Features
+
+* **deps:** bump github.com/gruntwork-io/terratest in /tests ([#69](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/69)) ([aa647ac](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/aa647ac66fe3a7de5b3c61109fa3a4ceb751d182))
+* **deps:** bump golang.org/x/crypto from 0.21.0 to 0.31.0 in /tests ([#72](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/72)) ([1e90b5f](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/1e90b5f6764ccf4a5d8da9fe9eb31d44241d1e6a))
+* **deps:** bump golang.org/x/net from 0.23.0 to 0.33.0 in /tests ([#73](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/73)) ([ae2a99b](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/ae2a99b67b605a91cc83fa475be82ffc573171e3))
+* remove temporary files when deployment tests fails ([#70](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/70)) ([b4c7466](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/b4c74662e549d3a4216567795c7e4fd8ff835006))
+
 ## [3.1.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v3.0.0...v3.1.0) (2024-12-09)
 
 
