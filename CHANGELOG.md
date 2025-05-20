@@ -11,8 +11,12 @@
 
 * add type definitions ([#78](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/78)) ([1615ca4](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/1615ca419e0b1a1834a626628ab28cf8291d0a69))
 
-## [3.2.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v3.1.0...v3.2.0) (2025-01-20)
+### Upgrade from v3.2.0 to v4.0.0:
 
+- Update module reference to: `version = "~> 4.0"`
+- The property and variable resource_group is renamed to resource_group_name
+
+## [3.2.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v3.1.0...v3.2.0) (2025-01-20)
 
 ### Features
 
