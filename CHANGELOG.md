@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v3.2.0...v4.0.0) (2025-05-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* The data structure changed, causing a recreate on existing resources.
+
+### Features
+
+* add type definitions ([#78](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/78)) ([1615ca4](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/1615ca419e0b1a1834a626628ab28cf8291d0a69))
+
 ## [3.2.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v3.1.0...v3.2.0) (2025-01-20)
 
 
