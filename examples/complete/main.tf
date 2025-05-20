@@ -56,7 +56,8 @@ module "public_ip" {
 }
 
 module "bastion" {
-  source = "../../"
+  source  = "cloudnationhq/bastion/azure"
+  version = "~> 4.0"
 
   host = {
     name                = module.naming.bastion_host.name_unique
