@@ -39,7 +39,7 @@ Type:
 
 ```hcl
 object({
-    name                      = optional(string, null)
+    name                      = string
     resource_group_name       = optional(string, null)
     location                  = optional(string, null)
     sku                       = optional(string, "Standard")
