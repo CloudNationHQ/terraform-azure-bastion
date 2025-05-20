@@ -1,6 +1,6 @@
 module "naming" {
   source  = "cloudnationhq/naming/azure"
-  version = "~> 0.22"
+  version = "~> 0.24"
 
   suffix = ["demo", "dev"]
 }
@@ -43,29 +43,25 @@ module "network" {
 
 module "public_ip" {
   source  = "cloudnationhq/pip/azure"
-  version = "~> 2.0"
-
-  naming = local.naming
+  version = "~> 4.0"
 
   configs = {
     bastion = {
-      name           = module.naming.public_ip.name
-      location       = module.rg.groups.demo.location
-      resource_group = module.rg.groups.demo.name
-
-      zones = ["1", "2", "3"]
+      name                = module.naming.public_ip.name
+      location            = module.rg.groups.demo.location
+      resource_group_name = module.rg.groups.demo.name
+      zones               = ["1", "2", "3"]
     }
   }
 }
 
 module "bastion" {
-  source  = "cloudnationhq/bastion/azure"
-  version = "~> 3.0"
+  source = "../../"
 
   host = {
-    name           = module.naming.bastion_host.name_unique
-    location       = module.rg.groups.demo.location
-    resource_group = module.rg.groups.demo.name
+    name                = module.naming.bastion_host.name_unique
+    location            = module.rg.groups.demo.location
+    resource_group_name = module.rg.groups.demo.name
 
     copy_paste_enabled     = true
     file_copy_enabled      = true
