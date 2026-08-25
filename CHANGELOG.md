@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v4.0.0...v5.0.0) (2026-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* this change causes recreates
+
+### Features
+
+* azurerm provider 5 upgrade ([#91](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/91)) ([d56d30c](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/d56d30ceade20517de8e9fbab6d9cd138c6c73a9))
+
 ## [4.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v3.2.0...v4.0.0) (2025-05-20)
 
 
