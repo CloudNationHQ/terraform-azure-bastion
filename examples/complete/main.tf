@@ -7,7 +7,7 @@ module "naming" {
 
 module "rg" {
   source  = "cloudnationhq/rg/azure"
-  version = "~> 2.0"
+  version = "~> 3.0"
 
   groups = {
     demo = {
@@ -19,21 +19,20 @@ module "rg" {
 
 module "network" {
   source  = "cloudnationhq/vnet/azure"
-  version = "~> 8.0"
-
-  naming = local.naming
+  version = "~> 10.0"
 
   vnet = {
-    name           = module.naming.virtual_network.name
-    location       = module.rg.groups.demo.location
-    resource_group = module.rg.groups.demo.name
-    address_space  = ["10.19.0.0/16"]
+    name                = module.naming.virtual_network.name
+    location            = module.rg.groups.demo.location
+    resource_group_name = module.rg.groups.demo.name
+    address_space       = ["10.19.0.0/16"]
 
     subnets = {
       bastion = {
         name             = "AzureBastionSubnet"
         address_prefixes = ["10.19.1.0/27"]
         network_security_group = {
+          name  = module.naming.network_security_group.name
           rules = local.rules
         }
       }
@@ -43,9 +42,9 @@ module "network" {
 
 module "public_ip" {
   source  = "cloudnationhq/pip/azure"
-  version = "~> 4.0"
+  version = "~> 5.0"
 
-  configs = {
+  public_ips = {
     bastion = {
       name                = module.naming.public_ip.name
       location            = module.rg.groups.demo.location
@@ -57,7 +56,7 @@ module "public_ip" {
 
 module "bastion" {
   source  = "cloudnationhq/bastion/azure"
-  version = "~> 4.0"
+  version = "~> 5.0"
 
   host = {
     name                = module.naming.bastion_host.name_unique
@@ -73,7 +72,7 @@ module "bastion" {
 
     ip_configuration = {
       subnet_id            = module.network.subnets.bastion.id
-      public_ip_address_id = module.public_ip.configs.bastion.id
+      public_ip_address_id = module.public_ip.public_ips.bastion.id
     }
   }
 }
