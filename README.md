@@ -13,19 +13,19 @@ The following requirements are needed by this module:
 
 - <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) (~> 1.0)
 
-- <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) (~> 4.0)
+- <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) (~> 5.0)
 
 ## Providers
 
 The following providers are used by this module:
 
-- <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) (~> 4.0)
+- <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) (~> 5.0)
 
 ## Resources
 
 The following resources are used by this module:
 
-- [azurerm_bastion_host.bastion](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/bastion_host) (resource)
+- [azurerm_bastion_host.this](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/bastion_host) (resource)
 
 ## Required Inputs
 
@@ -33,30 +33,30 @@ The following input variables are required:
 
 ### <a name="input_host"></a> [host](#input\_host)
 
-Description: Contains all configurations for bastion hosts
+Description: describes bastion host configuration
 
 Type:
 
 ```hcl
 object({
     name                      = string
-    resource_group_name       = optional(string, null)
-    location                  = optional(string, null)
+    resource_group_name       = optional(string)
+    location                  = optional(string)
     sku                       = optional(string, "Standard")
     scale_units               = optional(number, 2)
-    copy_paste_enabled        = optional(bool, false)
-    file_copy_enabled         = optional(bool, false)
-    tunneling_enabled         = optional(bool, false)
-    ip_connect_enabled        = optional(bool, false)
-    shareable_link_enabled    = optional(bool, false)
-    kerberos_enabled          = optional(bool, false)
-    session_recording_enabled = optional(bool, false)
-    zones                     = optional(list(string), [])
-    virtual_network_id        = optional(string, null)
+    copy_paste_enabled        = optional(bool)
+    file_copy_enabled         = optional(bool)
+    tunneling_enabled         = optional(bool)
+    ip_connect_enabled        = optional(bool)
+    shareable_link_enabled    = optional(bool)
+    kerberos_enabled          = optional(bool)
+    session_recording_enabled = optional(bool)
+    zones                     = optional(list(string))
+    virtual_network_id        = optional(string)
     ip_configuration = object({
       name                 = optional(string, "configuration")
       subnet_id            = string
-      public_ip_address_id = string
+      public_ip_address_id = optional(string)
     })
     tags = optional(map(string))
   })
@@ -96,7 +96,7 @@ The following outputs are exported:
 
 ### <a name="output_host"></a> [host](#output\_host)
 
-Description: Contains all configurations for bastion hosts
+Description: bastion host
 <!-- END_TF_DOCS -->
 
 ## Goals
@@ -133,4 +133,3 @@ MIT Licensed. See [LICENSE](./LICENSE) for full details.
 
 - [Documentation](https://learn.microsoft.com/en-us/azure/bastion/)
 - [Rest Api](https://learn.microsoft.com/en-us/rest/api/virtualnetwork/bastion-hosts)
-- [Rest Api Specs](https://github.com/Azure/azure-rest-api-specs/blob/main/specification/network/resource-manager/Microsoft.Network/stable/2023-04-01/bastionHost.json)

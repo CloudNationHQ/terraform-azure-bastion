@@ -1,4 +1,4 @@
 output "host" {
-  description = "Contains all configurations for bastion hosts"
-  value       = azurerm_bastion_host.bastion
+  description = "bastion host"
+  value       = azurerm_bastion_host.this
 }
