@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.1.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v5.0.0...v5.1.0) (2026-10-20)
+
+
+### Features
+
+* **deps:** bump github.com/klauspost/compress in /tests ([#93](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/93)) ([ac4f6dd](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/ac4f6dd2ea96a5fdac3242a7dadd8d4510fa8235))
+* **deps:** bump golang.org/x/crypto from 0.45.0 to 0.52.0 in /tests ([#95](https://github.com/CloudNationHQ/terraform-azure-bastion/issues/95)) ([d73027a](https://github.com/CloudNationHQ/terraform-azure-bastion/commit/d73027a4a4049b993cda4458baf647b9cfaf8b17))
+
 ## [5.0.0](https://github.com/CloudNationHQ/terraform-azure-bastion/compare/v4.0.0...v5.0.0) (2026-08-25)
 
 
